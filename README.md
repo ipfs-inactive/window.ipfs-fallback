@@ -1,5 +1,7 @@
 # window.ipfs-fallback
 
+[![Build Status](https://travis-ci.org/tableflip/window.ipfs-fallback.svg?branch=master)](https://travis-ci.org/tableflip/window.ipfs-fallback) [![dependencies Status](https://david-dm.org/tableflip/window.ipfs-fallback/status.svg)](https://david-dm.org/tableflip/window.ipfs-fallback) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com
+
 > Get `window.ipfs` with fallback to CDN if unavailable
 
 The [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) web extension provides a `window.ipfs` object to web pages you visit.
