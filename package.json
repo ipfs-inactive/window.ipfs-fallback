@@ -14,5 +14,20 @@
     "ava": "^0.25.0",
     "nyc": "^11.6.0",
     "standard": "^11.0.1"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tableflip/window.ipfs-fallback.git"
+  },
+  "keywords": [
+    "window.ipfs",
+    "ipfs",
+    "script",
+    "fallback"
+  ],
+  "bugs": {
+    "url": "https://github.com/tableflip/window.ipfs-fallback/issues"
+  },
+  "homepage": "https://github.com/tableflip/window.ipfs-fallback#readme"
 }
