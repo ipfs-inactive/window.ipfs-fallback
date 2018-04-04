@@ -1,0 +1,18 @@
+{
+  "name": "window.ipfs-fallback",
+  "version": "0.0.0",
+  "description": "Get window.ipfs with fallback to CDN if unavailable",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run test:ava",
+    "test:ava": "nyc --reporter=lcov --reporter=text ava",
+    "lint": "standard"
+  },
+  "author": "Alan Shaw",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nyc": "^11.6.0",
+    "standard": "^11.0.1"
+  }
+}
