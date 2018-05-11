@@ -5,7 +5,10 @@ module.exports = function getIpfs (opts) {
     if (window.ipfs) return resolve(window.ipfs)
 
     var onLoad = function () {
-      var ipfs = new window.Ipfs(opts.ipfs)
+      var Ipfs = getConstructor(opts.api)
+      var ipfs = new Ipfs(opts.ipfs)
+
+      if (opts.api) return resolve(ipfs)
 
       var onReady = function () {
         ipfs.removeListener('error', onError)
@@ -20,12 +23,22 @@ module.exports = function getIpfs (opts) {
       ipfs.once('ready', onReady).once('error', onError)
     }
 
-    if (window.Ipfs) return onLoad()
+    if (getConstructor(opts.api)) return onLoad()
 
     var script = document.createElement('script')
-    script.src = opts.cdn || 'https://unpkg.com/ipfs/dist/index.min.js'
+    script.src = opts.cdn || getCdnUrl(opts.api)
     script.onload = onLoad
     script.onerror = reject
     document.body.appendChild(script)
   })
+}
+
+function getConstructor (api) {
+  return api ? window.IpfsApi : window.Ipfs
+}
+
+function getCdnUrl (api) {
+  return api
+    ? 'https://unpkg.com/ipfs-api/dist/index.min.js'
+    : 'https://unpkg.com/ipfs/dist/index.min.js'
 }

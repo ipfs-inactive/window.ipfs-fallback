@@ -49,3 +49,20 @@ test.serial('should load IPFS from CDN if window.ipfs unavailable', async t => {
   const ipfs = await getIpfs()
   t.is(ipfs, instance)
 })
+
+test.serial('should load IPFS API', async t => {
+  const instance = {}
+
+  document.createElement = () => ({})
+  document.body = {
+    appendChild (el) {
+      process.nextTick(() => {
+        window.IpfsApi = function () { return instance }
+        el.onload()
+      })
+    }
+  }
+
+  const ipfs = await getIpfs({ api: true })
+  t.is(ipfs, instance)
+})
