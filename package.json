@@ -1,7 +1,7 @@
 {
   "name": "window.ipfs-fallback",
   "version": "1.1.0",
-  "description": "Get window.ipfs with fallback to CDN if unavailable",
+  "description": "Get IPFS API from window.ipfs with fallback to CDN if unavailable",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && npm run test:ava",
@@ -13,7 +13,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "nyc": "13.1.0",
-    "standard": "^11.0.1"
+    "standard": "^12.0.1"
   },
   "dependencies": {},
   "repository": {

@@ -2,7 +2,15 @@ module.exports = function getIpfs (opts) {
   opts = opts || {}
 
   return new Promise(function (resolve, reject) {
-    if (window.ipfs) return resolve(window.ipfs)
+    if (window.ipfs) {
+      // forward-compatible migration
+      // https://github.com/ipfs-shipyard/ipfs-companion/issues/589
+      if (typeof window.ipfs.enable === 'function') {
+        return resolve(window.ipfs.enable())
+      }
+      // backward-compatible
+      return resolve(window.ipfs)
+    }
 
     var onLoad = function () {
       var Ipfs = getConstructor(opts.api)

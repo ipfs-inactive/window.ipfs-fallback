@@ -4,7 +4,7 @@
 
 > Get `window.ipfs` with fallback to CDN if unavailable
 
-The [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) web extension provides a `window.ipfs` object to web pages you visit.
+The [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) web extension provides a [`window.ipfs` object](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md) to web pages you visit.
 
 This module will detects the presence of `window.ipfs` and automatically falls back to downloading the latest version of IPFS from `https://unpkg.com/ipfs/dist/index.min.js` if it's unavailable. Note: can be configured to fallback to IPFS API.
 
@@ -22,7 +22,7 @@ console.log(await ipfs.id())
 
 ### `getIpfs([options])`
 
-If `window.ipfs` is available, the promise is resolved with that node.
+If `window.ipfs` is available, the promise is resolved with that node and default ACLs.
 
 If `window.ipfs` is unavailable, a `<script src="https://unpkg.com/ipfs/dist/index.min.js" />` is inserted into the document and when the script has loaded a new IPFS node is created and the promise is resolved.
 
