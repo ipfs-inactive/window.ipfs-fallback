@@ -22,12 +22,14 @@ console.log(await ipfs.id())
 
 ### `getIpfs([options])`
 
-If `window.ipfs` is available, the promise is resolved with that node and default ACLs.
+If `window.ipfs` is available, the promise is resolved with that node and default or customized capabilities.
+
+* `options.defaults` - (Object) Options to pass to override default behavior of `window.ipfs`
 
 If `window.ipfs` is unavailable, a `<script src="https://unpkg.com/ipfs/dist/index.min.js" />` is inserted into the document and when the script has loaded a new IPFS node is created and the promise is resolved.
 
 * `options.cdn` - (String) URL of a CDN to load IPFS from. Use this option if you want to use a different CDN, or request a specific version, or a non-minifed version
-* `options.ipfs` - (Object) Options to pass to the fallback IPFS constructor
+* `options.ipfs` - (Object) Options to pass to the fallback [IPFS constructor](https://github.com/ipfs/js-ipfs#ipfs-constructor)
 * `options.api` - (Boolean) Fallback to IPFS API (https://unpkg.com/ipfs-api/dist/index.min.js by default)
 
 ## Contribute
