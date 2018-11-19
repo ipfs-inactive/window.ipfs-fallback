@@ -1,6 +1,6 @@
 # window.ipfs-fallback
 
-[![Build Status](https://travis-ci.org/tableflip/window.ipfs-fallback.svg?branch=master)](https://travis-ci.org/tableflip/window.ipfs-fallback) [![dependencies Status](https://david-dm.org/tableflip/window.ipfs-fallback/status.svg)](https://david-dm.org/tableflip/window.ipfs-fallback) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/ipfs-shipyard/window.ipfs-fallback.svg?branch=master)](https://travis-ci.org/ipfs-shipyard/window.ipfs-fallback) [![dependencies Status](https://david-dm.org/ipfs-shipyard/window.ipfs-fallback/status.svg)](https://david-dm.org/ipfs-shipyard/window.ipfs-fallback) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > Get `window.ipfs` with fallback to CDN if unavailable
 
@@ -34,7 +34,7 @@ If `window.ipfs` is unavailable, a `<script src="https://unpkg.com/ipfs/dist/ind
 
 ## Contribute
 
-Feel free to dive in! [Open an issue](https://github.com/tableflip/window.ipfs-fallback/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/ipfs-shipyard/window.ipfs-fallback/issues/new) or submit PRs.
 
 ## License
 

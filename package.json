@@ -18,7 +18,7 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tableflip/window.ipfs-fallback.git"
+    "url": "git+https://github.com/ipfs-shipyard/window.ipfs-fallback.git"
   },
   "keywords": [
     "window.ipfs",
@@ -27,7 +27,7 @@
     "fallback"
   ],
   "bugs": {
-    "url": "https://github.com/tableflip/window.ipfs-fallback/issues"
+    "url": "https://github.com/ipfs-shipyard/window.ipfs-fallback/issues"
   },
-  "homepage": "https://github.com/tableflip/window.ipfs-fallback#readme"
+  "homepage": "https://github.com/ipfs-shipyard/window.ipfs-fallback#readme"
 }
