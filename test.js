@@ -14,9 +14,9 @@ test.serial('should use window.ipfs if available', async t => {
 
 test.serial('should use window.ipfs.enable if available', async t => {
   window.ipfs = { enable: async (args) => args }
-  const defaults = Object.freeze({ foo: ['a', 'b', 'c'], bar: ['1', '2', '3'], buzz: false })
-  const ipfs = await getIpfs({ defaults })
-  t.deepEqual(ipfs, defaults)
+  const permissions = Object.freeze({ foo: ['a', 'b', 'c'], bar: ['1', '2', '3'], buzz: false })
+  const ipfs = await getIpfs({ permissions })
+  t.deepEqual(ipfs, permissions)
 })
 
 test.serial('should use window.Ipfs if available', async t => {

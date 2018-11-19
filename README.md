@@ -24,7 +24,7 @@ console.log(await ipfs.id())
 
 If `window.ipfs` is available, the promise is resolved with that node and default or customized capabilities.
 
-* `options.defaults` - (Object) Options to pass to override default behavior of `window.ipfs`
+* `options.permissions` - (Object) Options to pass to override default behavior of `window.ipfs`
 
 If `window.ipfs` is unavailable, a `<script src="https://unpkg.com/ipfs/dist/index.min.js" />` is inserted into the document and when the script has loaded a new IPFS node is created and the promise is resolved.
 

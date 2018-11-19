@@ -6,7 +6,7 @@ module.exports = function getIpfs (opts) {
       // forward-compatible migration
       // https://github.com/ipfs-shipyard/ipfs-companion/issues/589
       if (typeof window.ipfs.enable === 'function') {
-        return resolve(window.ipfs.enable(opts.defaults))
+        return resolve(window.ipfs.enable(opts.permissions))
       }
       // backward-compatible
       return resolve(window.ipfs)
