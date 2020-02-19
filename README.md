@@ -6,7 +6,7 @@
 
 The [IPFS Companion](https://github.com/ipfs-shipyard/ipfs-companion) web extension provides a [`window.ipfs` object](https://github.com/ipfs-shipyard/ipfs-companion/blob/master/docs/window.ipfs.md) to web pages you visit.
 
-This module will detects the presence of `window.ipfs` and automatically falls back to downloading the latest version of IPFS from `https://unpkg.com/ipfs/dist/index.min.js` if it's unavailable. Note: can be configured to fallback to IPFS API.
+This module will detects the presence of `window.ipfs` and automatically falls back to downloading the latest version of IPFS from `https://unpkg.com/ipfs/dist/index.min.js` if it's unavailable. Note: can be configured to fallback to IPFS HTTP Client.
 
 ## Usage
 
@@ -30,7 +30,7 @@ If `window.ipfs` is unavailable, a `<script src="https://unpkg.com/ipfs/dist/ind
 
 * `options.cdn` - (String) URL of a CDN to load IPFS from. Use this option if you want to use a different CDN, or request a specific version, or a non-minifed version
 * `options.ipfs` - (Object) Options to pass to the fallback [IPFS constructor](https://github.com/ipfs/js-ipfs#ipfs-constructor)
-* `options.api` - (Boolean) Fallback to IPFS API (https://unpkg.com/ipfs-api/dist/index.min.js by default)
+* `options.api` - (Boolean) Fallback to IPFS API (https://unpkg.com/ipfs-http-client/dist/index.min.js by default)
 
 ## Contribute
 

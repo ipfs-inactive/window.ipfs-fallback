@@ -12,26 +12,21 @@ module.exports = function getIpfs (opts) {
       return resolve(window.ipfs)
     }
 
-    var onLoad = function () {
-      var Ipfs = getConstructor(opts.api)
-      var ipfs = new Ipfs(opts.ipfs)
-
-      if (opts.api) return resolve(ipfs)
-
-      var onReady = function () {
-        ipfs.removeListener('error', onError)
-        resolve(ipfs)
+    var onLoad = async function () {
+      try {
+        if (opts.api) {
+          var httpIpfs = window.IpfsHttpClient(opts.ipfs)
+          return resolve(httpIpfs)
+        } else {
+          var localIpfs = await window.Ipfs.create(opts.ipfs)
+          return resolve(localIpfs)
+        }
+      } catch (err) {
+        return reject(err)
       }
-
-      var onError = function (err) {
-        ipfs.removeListener('ready', onReady)
-        reject(err)
-      }
-
-      ipfs.once('ready', onReady).once('error', onError)
     }
 
-    if (getConstructor(opts.api)) return onLoad()
+    if (clientAvailable(opts.api)) return onLoad()
 
     var script = document.createElement('script')
     script.src = opts.cdn || getCdnUrl(opts.api)
@@ -41,12 +36,12 @@ module.exports = function getIpfs (opts) {
   })
 }
 
-function getConstructor (api) {
-  return api ? window.IpfsApi : window.Ipfs
+function clientAvailable (api) {
+  return api ? window.IpfsHttpClient : window.Ipfs
 }
 
 function getCdnUrl (api) {
   return api
-    ? 'https://unpkg.com/ipfs-api/dist/index.min.js'
+    ? 'https://unpkg.com/ipfs-http-client/dist/index.min.js'
     : 'https://unpkg.com/ipfs/dist/index.min.js'
 }

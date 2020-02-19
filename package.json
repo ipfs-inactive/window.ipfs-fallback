@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run lint && npm run test:ava",
     "test:ava": "nyc --reporter=lcov --reporter=text ava",
-    "lint": "standard"
+    "lint": "standard",
+    "lint:fix": "standard --fix"
   },
   "author": "Alan Shaw",
   "license": "MIT",
