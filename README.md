@@ -1,3 +1,12 @@
+# Deprecated
+
+This library has been deprecated and replaced with more flexible [ipfs-provider](https://github.com/ipfs-shipyard/ipfs-provider). 
+
+*This library will not be maintained.*
+
+---
+
+
 # window.ipfs-fallback
 
 [![Build Status](https://travis-ci.org/ipfs-shipyard/window.ipfs-fallback.svg?branch=master)](https://travis-ci.org/ipfs-shipyard/window.ipfs-fallback) [![dependencies Status](https://david-dm.org/ipfs-shipyard/window.ipfs-fallback/status.svg)](https://david-dm.org/ipfs-shipyard/window.ipfs-fallback) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
